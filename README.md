@@ -415,7 +415,7 @@ Document title: *CCE238145* – *PSoC 61 UBM controller application*
 
  Version | Description of change
  ------- | ---------------------
- 1.0.0   | New code example
+ 1.0.0   | New code example 
 <br />
 
 -------------------------------------------------------------------------------

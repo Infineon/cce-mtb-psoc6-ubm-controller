@@ -46,7 +46,6 @@ BSP_DEFINES:=CY_USING_HAL
 MPN_LIST:=CY8C6136BZI-F14
 DEVICE:=CY8C6136BZI-F14
 DEVICE_COMPONENTS:=CAT1 CAT1A PSOC6_01
-DEVICE_CY8C6347BZI-BLD53_SRAM_KB:=288
 DEVICE_LIST:=CY8C6136BZI-F14
 DEVICE_TOOL_IDS:=bsp-assistant capsense-configurator capsense-tuner device-configurator dfuh-tool library-manager lin-configurator ml-configurator project-creator qspi-configurator seglcd-configurator smartio-configurator usbdev-configurator
 RECIPE_DIR:=$(SEARCH_recipe-make-cat1a)

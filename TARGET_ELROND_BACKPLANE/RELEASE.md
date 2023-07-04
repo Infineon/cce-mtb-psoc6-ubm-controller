@@ -15,13 +15,6 @@ The PSOC6-GENERIC library includes the following:
 * API documentation
 
 ### What Changed?
-#### v4.1.0
-* Updated linker scripts and startup code to align with mtb-pdl-cat1 v3.4.0
-* Added functionality to enable BSP Assistant chip flow
-* Added capabilities to match BSPS created by BSP Assistant chip flow
-#### v4.1.0
-* Add macro `CYBSP_USER_BTN_DRIVE` indicating the drive mode that should be used for user buttons
-* PSoC 64 boards: Fix cybsp_init not recognizing that a prebuilt CM0+ image is in use when using TFM.
 #### v4.0.0
 Note: This revision is only compatible with ModusToolbox Tools 3.0 and newer.
 * Removed default dependency on CAPSENSE™ middleware. The library manager can be used to add this dependency if desired.
@@ -86,8 +79,8 @@ This version of the PSOC6-GENERIC BSP was validated for compatibility with the f
 
 | Software and Tools                        | Version |
 | :---                                      | :----:  |
-| ModusToolbox™ Software Environment        | 3.1.0   |
-| GCC Compiler                              | 12.2.1  |
+| ModusToolbox™ Software Environment        | 3.0.0   |
+| GCC Compiler                              | 10.3.1  |
 | IAR Compiler                              | 9.30.1  |
 | ARM Compiler                              | 6.16    |
 
