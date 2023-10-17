@@ -12,8 +12,9 @@
 # $ Copyright 2023-YEAR Cypress Semiconductor Apache2 $
 ################################################################################
 
+
 # Flashmap JSON file name
-FLASH_MAP=psoc6_overwrite_single.json
+FLASH_MAP=psoc62_swap_single_custom.json
 
 # Device family name. Ex: PSOC6, CYW20289
 FAMILY=PSOC6

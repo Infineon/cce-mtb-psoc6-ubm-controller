@@ -1,13 +1,13 @@
 {
     "boot_and_upgrade":
     {
-        "ubm_bootloader": {
+        "bootloader": {
             "address": {
-                "description": "Address of the ubm_bootloader",
+                "description": "Address of the bootloader",
                 "value": "0x10000000"
             },
             "size": {
-                "description": "Size of the ubm_bootloader",
+                "description": "Size of the bootloader",
                 "value": "0x18000"
             },
             "scratch_address": {

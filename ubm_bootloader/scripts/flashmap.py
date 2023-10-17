@@ -526,9 +526,9 @@ def get_str(obj, attr, def_val=None):
 class AddrSize:
     """Bootloader area"""
 
-    def __init__(self, ubm_bootloader, addr_name, size_name):
-        self.fa_addr = get_val(ubm_bootloader, addr_name)
-        self.fa_size = get_val(ubm_bootloader, size_name)
+    def __init__(self, bootloader, addr_name, size_name):
+        self.fa_addr = get_val(bootloader, addr_name)
+        self.fa_size = get_val(bootloader, size_name)
 
 
 def calc_status_size(boot_swap_status_row_sz, max_img_sectors,
@@ -602,7 +602,7 @@ def process_images(area_list, boot_and_upgrade):
     """Process images"""
     app_count = 0
     slot_sectors_max = 0
-    all_shared = get_bool(boot_and_upgrade['ubm_bootloader'], 'shared_slot')
+    all_shared = get_bool(boot_and_upgrade['bootloader'], 'shared_slot')
     any_shared = all_shared
     app_core = None
     apps_flash_map = [None, ]
@@ -698,26 +698,26 @@ def main():
 
     try:
         boot_and_upgrade, flash = process_json(params.in_file)
-        ubm_bootloader = boot_and_upgrade['ubm_bootloader']
-        boot = AddrSize(ubm_bootloader, 'address', 'size')
+        bootloader = boot_and_upgrade['bootloader']
+        boot = AddrSize(bootloader, 'address', 'size')
     except KeyError as key:
         print('Malformed JSON:', key, 'is missing',
               file=sys.stderr)
         sys.exit(5)
 
     try:
-        scratch = AddrSize(ubm_bootloader, 'scratch_address', 'scratch_size')
+        scratch = AddrSize(bootloader, 'scratch_address', 'scratch_size')
     except KeyError:
         scratch = None
 
     try:
-        swap_status = AddrSize(ubm_bootloader, 'status_address', 'status_size')
+        swap_status = AddrSize(bootloader, 'status_address', 'status_size')
     except KeyError:
         swap_status = None
 
     # Create flash areas
     area_list = AreaList(plat, flash, scratch is None and swap_status is None)
-    area_list.add_area('ubm_bootloader', 'FLASH_AREA_BOOTLOADER',
+    area_list.add_area('bootloader', 'FLASH_AREA_BOOTLOADER',
                        boot.fa_addr, boot.fa_size)
 
     # Service RAM app (optional)

@@ -1,7 +1,7 @@
 # Refer to the memo SRDS-383 for details on how to use this template.
 variables:
   # Specify the code example version. This version is used for tagging the staging repository.
-  CE_REL_VERSION: 1.0.0
+  CE_REL_VERSION: 2.0.0
 
   # Specify the code example author's Cypress initials/username. This will be used in CX survey URL generation and to automatically assign regression JIRA tickets.
   CE_AUTHOR_NAME: "SDAK"
@@ -29,6 +29,7 @@ variables:
 
   # Specify the supported targets, separated by spaces. E.g. CY8CPROTO-062-4343W CY8CKIT-062-WIFI-BT CY8CKIT-062S2-43012
   CE_TARGET_LIST: ELROND_BACKPLANE
+
   # Specify the additional build parameters, like verbose output. Leave it empty if not needed.
   CE_BUILD_PARAM: ""
 
