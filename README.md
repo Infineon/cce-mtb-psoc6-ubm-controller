@@ -200,15 +200,9 @@ This example bundles two applications: the ubm_bootloader and the ubm_controller
 
    1. Open *ubm_bootloader/shared_config.mk* and ensure that `FLASH_MAP` is set to `psoc62_swap_single_custom.json`.
 
-   2. Open *ubm_bootloader/flashmap/psoc62_swap_single_custom.json* and ensure that `application_1` and `upgrade_size` are set to `0x20000`.
+   2. Open *ubm_bootloader/flashmap/psoc62_swap_single_custom.json* and ensure that `application_1` `address` is set to `0x10018000U`  and `upgrade_size` is set to `0x20000`.
 
-   3. Open *ubm_controller/imports/ubm/mtb_ubm_config.h* and ensure that the macros `MTB_UBM_UPGRADE_AREA_START_ADDRESS` and `MTB_UBM_UPGRADE_AREA_SIZE` are set as follows:
-
-      ```
-      #define MTB_UBM_UPGRADE_AREA_START_ADDRESS       (0x10018000U)
-      #define MTB_UBM_UPGRADE_AREA_SIZE                (0x20000U)
-      ```
-   4. Ensure that the PSoC&trade; 61 pins used to map DFC and HFC (see the `ubm_backplane_control_signals` structure in *ubm_controller/main.c*) are not reused anywhere else in the application.
+   3. Ensure that the PSoC&trade; 61 pins used to map DFC and HFC (see the `ubm_backplane_control_signals` structure in *ubm_controller/main.c*) are not reused anywhere else in the application.
 
 4. Build the ubm_bootloader application.
 
@@ -353,6 +347,13 @@ Sl. No. | Command | Description | Code
 
 Once the valid image is present in the non-volatile memory, MCUboot will automatically take care of switching the application to the upgraded UBM controller image.
 
+### Recommended Clock frequency
+
+ Clock | Frequency |
+-------|-----------
+CM0 | 74MHz 
+CM4 | 144MHz 
+Peripheral clocks | 74MHz 
 
 ## More information
 

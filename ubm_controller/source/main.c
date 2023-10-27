@@ -6,9 +6,19 @@
 *
 * Related Document: See README.md
 *
+*
+*
 *******************************************************************************
 * $ Copyright 2023-YEAR Cypress Semiconductor $
 *******************************************************************************/
+/******************************************************************************
+ * Recommended Clock frequency Settings
+ *
+ * Clock frequency for CM0 ---------- 72MHz
+ * Clock frequency for CM4 ---------- 144MHz
+ * Peripherals clock frequency ------ 72MHz
+ *
+ ******************************************************************************/
 
 #include "cybsp.h"
 #include "cyhal.h"
